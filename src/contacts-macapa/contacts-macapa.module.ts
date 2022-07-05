@@ -6,21 +6,20 @@ import { ContactsMacapa } from './entities/contacts-macapa.entity';
 
 @Module({
   imports: [
-    TypeOrmModule.forFeature([ContactsMacapa]),
+    TypeOrmModule.forFeature([ContactsMacapa], 'DB_CONNECTION_1'),
     TypeOrmModule.forRootAsync({
+      name: 'DB_CONNECTION_1',
       useFactory: () => ({
         type: 'mysql',
-        host: process.env.MYSQL_ROOT_HOST,
-        port: parseInt(process.env.MYSQL_PORT),
         database: process.env.MYSQL_DATABASE,
+        port: parseInt(process.env.MYSQL_PORT),
+        password: process.env.MYSQL_ROOT_PASSWORD,
         username: process.env.MYSQL_USER,
-        password: process.env.MYSQL_PASSWORD,
         entities: [ContactsMacapa],
         synchronize: true,
       }),
     }),
   ],
-
   controllers: [ContactsMacapaController],
   providers: [ContactsMacapaService],
 })

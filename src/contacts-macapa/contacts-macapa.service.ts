@@ -1,5 +1,6 @@
 import {
   BadRequestException,
+  Injectable,
   InternalServerErrorException,
   Logger,
 } from '@nestjs/common';
@@ -12,11 +13,12 @@ import {
 } from './dto/create-contacts-macapa.dto';
 import { ContactsMacapa } from './entities/contacts-macapa.entity';
 
+@Injectable()
 export class ContactsMacapaService {
   private readonly logger = new Logger(ContactsMacapaService.name);
 
   constructor(
-    @InjectRepository(ContactsMacapa)
+    @InjectRepository(ContactsMacapa, 'DB_CONNECTION_1')
     private readonly contactsMacapaRepository: Repository<ContactsMacapa>,
   ) {}
 
