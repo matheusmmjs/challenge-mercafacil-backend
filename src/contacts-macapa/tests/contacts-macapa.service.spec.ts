@@ -27,7 +27,7 @@ describe('ContactsMacapaService', () => {
       providers: [
         ContactsMacapaService,
         {
-          provide: getRepositoryToken(ContactsMacapa),
+          provide: getRepositoryToken(ContactsMacapa, 'DB_CONNECTION_1'),
           useValue: {
             save: jest.fn().mockResolvedValue(contactsMacapaMock),
             find: jest.fn().mockResolvedValue(contactsMacapaMock),

@@ -10,7 +10,6 @@ import { ContactsVarejaoModule } from './contacts-varejao/contacts-varejao.modul
     ContactsMacapaModule,
     ContactsVarejaoModule,
   ],
-
   controllers: [AppController],
 })
 export class AppModule {}
