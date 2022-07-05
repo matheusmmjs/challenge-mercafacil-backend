@@ -1,0 +1,19 @@
+GET http://localhost:3000
+Content-Type: application/json
+
+###
+POST http://localhost:3000/v1/contacts-macapa
+Content-Type: application/json
+
+{
+  "contacts": [
+    {
+      "name": "Marina Rodrigues",
+      "cellphone": "5541996941919"
+    },
+    {
+      "name": "Nicolas Rodrigues",
+      "cellphone": "5541954122723"
+    }
+  ]
+}
