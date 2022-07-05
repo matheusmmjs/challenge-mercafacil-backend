@@ -1,4 +1,11 @@
-import { Controller, Get, Post, Body } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  HttpCode,
+  HttpStatus,
+} from '@nestjs/common';
 import { ContactsMacapaService } from './contacts-macapa.service';
 import { CreateContactsMacapaDto } from './dto/create-contacts-macapa.dto';
 
@@ -10,12 +17,14 @@ export class ContactsMacapaController {
   constructor(private readonly contactsMacapaService: ContactsMacapaService) {}
 
   @Post()
+  @HttpCode(HttpStatus.CREATED)
   async create(@Body() createContactsMacapaDto: CreateContactsMacapaDto) {
     return await this.contactsMacapaService.create(createContactsMacapaDto);
   }
 
   @Get()
-  findAll() {
-    return this.contactsMacapaService.findAll();
+  @HttpCode(HttpStatus.OK)
+  async findAll() {
+    return await this.contactsMacapaService.findAll();
   }
 }

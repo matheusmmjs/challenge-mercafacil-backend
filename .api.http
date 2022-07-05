@@ -17,3 +17,8 @@ Content-Type: application/json
     }
   ]
 }
+
+###
+
+GET http://localhost:3000/v1/contacts-macapa
+Content-Type: application/json
