@@ -8,12 +8,12 @@ Content-Type: application/json
 {
   "contacts": [
     {
-      "name": "Marina Rodrigues",
-      "cellphone": "5541996941919"
+      "name": "MARINA RODRIGUES",
+      "cellphone": "5541996941911"
     },
     {
-      "name": "Nicolas Rodrigues",
-      "cellphone": "5541954122723"
+      "name": "NICOLAS RODRIGUES",
+      "cellphone": "5541954122721"
     }
   ]
 }
