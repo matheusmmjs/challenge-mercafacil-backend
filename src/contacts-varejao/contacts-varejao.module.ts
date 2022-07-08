@@ -16,7 +16,7 @@ import { ContactsVarejao } from './entities/contacts-varejao.entity';
         port: parseInt(process.env.POSTGRES_PORT),
         username: process.env.POSTGRES_USER,
         entities: [ContactsVarejao],
-        synchronize: false,
+        synchronize: true,
       }),
     }),
   ],
